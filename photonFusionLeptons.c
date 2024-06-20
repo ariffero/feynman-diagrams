@@ -69,4 +69,8 @@ void photonFusionLeptons(bool directions = true){
     lep->Draw();
     t.DrawLatex(57,32.5,"#it{l}^{+}");
 
+    //save the image
+    gSystem->mkdir("images");
+    c->SaveAs("images/photonFusionLeptons.pdf");
+
 }

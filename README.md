@@ -1,5 +1,5 @@
 # feynman-diagrams
-ROOT macros to draw some Feyman diagrams
+ROOT macros to draw some Feyman diagrams. The results are collected in the folder images.
 
 1. **photonFusionLeptons.c** macro to produce the diagram of photon-photn fusion into two leptons at tree level. Landscape orientation. It has an option to draw the lepton with an arrow (default) or with a line, for the second execute the script using passing *false* as parameter.
 

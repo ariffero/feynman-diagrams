@@ -62,13 +62,18 @@ void diffractiveEMD(bool directions = true){
     interaction->Draw();
 
     //EMD
-    gamma = new TCurlyLine(50, 75, 52.7, 25.4);
+    gamma = new TCurlyLine(50, 75, 52.8, 25.8);
     gamma->Draw();
     t.DrawLatex(56,57,"#gamma");
 
     //neutron
     neutron = new TArrow(52.8, 25.8, 65, 25.8, arrowSize, "-->");
     neutron->Draw();
-     t.DrawLatex(67.5,25.8,"n");
+    t.DrawLatex(67.5,25.8,"n");
+
+    //save the image
+    gSystem->mkdir("images");
+    c->SaveAs("images/diffractiveEMD.pdf");
+
         
 }

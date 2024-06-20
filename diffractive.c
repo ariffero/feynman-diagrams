@@ -56,5 +56,10 @@ void diffractive(bool directions = true){
     interaction->SetFillColor(kGray);
     interaction->SetLineWidth(0);
     interaction->Draw();
+
+    //save the image
+    gSystem->mkdir("images");
+    c->SaveAs("images/diffractive.pdf");
+
         
 }
