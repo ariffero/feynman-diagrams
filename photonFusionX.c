@@ -20,14 +20,15 @@ void photonFusionX(bool directions = true){
     gamma->Draw();
 
     //line for final state x
-    //Tline *final;
+    TArrow *final;
+    float arrowSize = 0.02;
+    if(!directions) arrowSize = 0;
 
     //upper lead
     lead = new TLine(10, 80, 30, 70); 
     lead->Draw();
     lead = new TLine(30, 70, 70, 80); 
     lead->Draw();
-
     t.DrawLatex(15,83,"A");
     t.DrawLatex(65,83,"A");
 
@@ -36,7 +37,28 @@ void photonFusionX(bool directions = true){
     lead->Draw();
     lead = new TLine(40, 30, 70, 20); 
     lead->Draw();
-
     t.DrawLatex(15,17,"A");
     t.DrawLatex(65,17,"A");
+
+    //upper photon
+    gamma = new TCurlyLine(30, 70, 35, 52);
+    gamma->Draw();
+    t.DrawLatex(27,62,"#gamma");
+
+    //upper photon
+    gamma = new TCurlyLine(40, 30, 35, 48);
+    gamma->Draw();
+    t.DrawLatex(43,37,"#gamma");
+
+    //final state x
+    final = new TArrow(35, 50, 50, 50, arrowSize, "-->");
+    final->Draw();
+    t.DrawLatex(53,50,"x");
+
+    //interaction
+    TEllipse *interaction = new TEllipse(35, 50, 3, 3);
+    interaction->SetNoEdges();
+    interaction->SetFillColor(kGray);
+    interaction->SetLineWidth(0);
+    interaction->Draw();
 }
