@@ -1,6 +1,6 @@
 //draw Feynman diagram for photon-photon fusion in ll
 
-void photonFusion(bool directions = true){
+void photonFusionLeptons(bool directions = true){
     
     TCanvas *c = new TCanvas("c", "c", 10,10, 600, 400);
     c->Range(0, 0, 100, 80);
@@ -48,7 +48,7 @@ void photonFusion(bool directions = true){
     gamma->Draw();
     t.DrawLatex(27,52,"#gamma");
 
-    //lowe photon
+    //lower photon
     gamma = new TCurlyLine(50, 20, 40, 32.5);
     gamma->Draw();
     t.DrawLatex(51,25,"#gamma");
@@ -68,7 +68,5 @@ void photonFusion(bool directions = true){
     lep = new TArrow(40, 32.5, 55, 32.5, arrowSize, "-<-");
     lep->Draw();
     t.DrawLatex(57,32.5,"#it{l}^{+}");
-
-    //arrows for direction
 
 }
