@@ -12,3 +12,5 @@ ROOT macros to draw some Feyman diagrams. The results are collected in the folde
 5. **diffractiveEMD.c** macro that produces a diagram for a diffractive photon-nulcear interaction with EMD. It produces a generic state x plus a neutron in the final state. Photon-nuclear interaction represented as a blob. Portrait orientation. It has an option to draw the final state with an arrow (default) or with a line, for the second execute the script using passing *false* as parameter.
 
 6. **VMPhotoprodEMD.c** macro that produced a diagram for a vector meson photoproduction in UPC accompained by EMD. It has an option to select the EMD type: Xn0n (EMD of one nucleus), XnXn (both nuclei undergo EMD). It has also another option to chose if use arrows or lines for the final state particles (arrows as default, lines passing *false* as second argument). The figure is in landscape orientation.
+
+7. **photonFusionLeptons2.c** same as photonFusionLeptons.c but with portait orientation.
