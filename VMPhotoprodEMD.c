@@ -47,6 +47,7 @@ void VMPhotoprodEMD(string EMD = "Xn0n", bool directions = true){
 
     // photon
     gamma = new TCurlyLine(25, 60, 50, 20);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(26,50,"#gamma");
 
@@ -64,6 +65,7 @@ void VMPhotoprodEMD(string EMD = "Xn0n", bool directions = true){
 
     //EMD
     gamma = new TCurlyLine(60, 65.4, 66, 16.);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(58., 51.5,"#gamma");
 
@@ -73,6 +75,7 @@ void VMPhotoprodEMD(string EMD = "Xn0n", bool directions = true){
 
     if(EMD == "XnXn"){
         gamma = new TCurlyLine(78, 12.8, 73, 67.2);
+        gamma->SetWavy();
         gamma->Draw();
         t.DrawLatex(71, 51.5,"#gamma");
 

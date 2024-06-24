@@ -46,6 +46,7 @@ void diffractiveEMD(bool directions = true){
 
     // photon
     gamma = new TCurlyLine(30, 70, 40, 30);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(27,62,"#gamma");
 
@@ -63,6 +64,7 @@ void diffractiveEMD(bool directions = true){
 
     //EMD
     gamma = new TCurlyLine(50, 75, 52.8, 25.8);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(56,57,"#gamma");
 

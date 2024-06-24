@@ -42,11 +42,13 @@ void photonFusionX(bool directions = true){
 
     //upper photon
     gamma = new TCurlyLine(30, 70, 35, 52);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(27,62,"#gamma");
 
     //upper photon
     gamma = new TCurlyLine(40, 30, 35, 48);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(43,37,"#gamma");
 

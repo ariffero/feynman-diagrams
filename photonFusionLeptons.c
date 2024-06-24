@@ -45,11 +45,13 @@ void photonFusionLeptons(bool directions = true){
 
     //upper photon
     gamma = new TCurlyLine(25, 60, 40, 47.5);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(27,52,"#gamma");
 
     //lower photon
     gamma = new TCurlyLine(50, 20, 40, 32.5);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(51,25,"#gamma");
 

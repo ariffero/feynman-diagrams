@@ -42,6 +42,7 @@ void diffractive(bool directions = true){
 
     // photon
     gamma = new TCurlyLine(30, 70, 40, 30);
+    gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(27,62,"#gamma");
 
