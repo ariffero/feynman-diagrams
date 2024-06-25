@@ -1,7 +1,7 @@
 // draw the Feynman diagram for photon-nuclear diffractive process in UPCs
 // with EMD interaction
 
-void diffractiveEMD(bool directions = true){
+void diffractiveEMD(bool directions = true, bool separate = true){
 
     TCanvas *c = new TCanvas("c", "c", 10,10, 400, 600);
     c->Range(0, 0, 80, 100);
@@ -34,7 +34,7 @@ void diffractiveEMD(bool directions = true){
     lead = new TLine(30, 70, 70, 80); 
     lead->Draw();
     t.DrawLatex(15,83,"A");
-    t.DrawLatex(65,83,"A");
+    t.DrawLatex(65,83,"A'");
 
     //lower lead
     lead = new TLine(10, 20, 40, 30); 
@@ -42,7 +42,7 @@ void diffractiveEMD(bool directions = true){
     lead = new TLine(40, 30, 70, 20); 
     lead->Draw();
     t.DrawLatex(15,17,"A");
-    t.DrawLatex(65,17,"A'");
+    t.DrawLatex(65,17,"A");
 
     // photon
     gamma = new TCurlyLine(30, 70, 40, 30);
@@ -51,9 +51,9 @@ void diffractiveEMD(bool directions = true){
     t.DrawLatex(27,62,"#gamma");
 
     //final state x
-    final = new TArrow(40, 33., 65, 33., arrowSize, "-->");
+    final = new TArrow(40, 33., 53, 33., arrowSize, "-->");
     final->Draw();
-    t.DrawLatex(67.5,33.,"x");
+    t.DrawLatex(52,36.,"x");
     
     //interaction
     TEllipse *interaction = new TEllipse(40, 32, 3, 5);
@@ -63,19 +63,25 @@ void diffractiveEMD(bool directions = true){
     interaction->Draw();
 
     //EMD
-    gamma = new TCurlyLine(50, 75, 52.8, 25.8);
+    gamma = new TCurlyLine(59, 77.3, 62, 22.7);
     gamma->SetWavy();
     gamma->Draw();
-    t.DrawLatex(56,57,"#gamma");
+    t.DrawLatex(64,57,"#gamma");
 
     //neutron
-    neutron = new TArrow(52.8, 25.8, 65, 25.8, arrowSize, "-->");
+    neutron = new TArrow(59, 77.2, 68, 77.2, arrowSize, "-->");
     neutron->Draw();
-    t.DrawLatex(67.5,25.8,"n");
+    t.DrawLatex(67,74.5,"n");
+
+    //separe EMD processes
+    TLine *sep = new TLine(55, 15, 55, 85);
+    sep->SetLineStyle(3);
+    if(separate) sep->Draw();
 
     //save the image
     gSystem->mkdir("images");
-    c->SaveAs("images/diffractiveEMD.pdf");
+    if(!separate) c->SaveAs("images/diffractiveEMD.pdf");
+    if(separate)  c->SaveAs("images/diffractiveEMD-sep.pdf");
 
         
 }
