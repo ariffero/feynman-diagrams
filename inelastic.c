@@ -55,7 +55,7 @@ void inelastic(bool directions = true){
     final->Draw();
     final = new TArrow(40, 30, 65, 22., arrowSize, "-->");
     final->Draw();
-    t.DrawLatex(66,35.,"x");
+    t.DrawLatex(67,33.,"x");
     
     //interaction
     TEllipse *interaction = new TEllipse(40, 32, 3, 5);
@@ -66,8 +66,8 @@ void inelastic(bool directions = true){
 
     //mark the rapidity gap
     TArrow *rap = new TArrow(50,60,60,60,arrowSize,"<-|");
-    rap->Draw();
-    t.DrawLatex(66, 60, "gap");
+    //rap->Draw();
+    //t.DrawLatex(66, 60, "gap");
 
     //save the image
     gSystem->mkdir("images");
