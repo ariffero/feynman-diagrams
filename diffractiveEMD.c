@@ -45,22 +45,34 @@ void diffractiveEMD(bool directions = true, bool separate = true){
     t.DrawLatex(65,17,"A");
 
     // photon
-    gamma = new TCurlyLine(30, 70, 40, 30);
+    gamma = new TCurlyLine(30, 70, 37, 47);
     gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(27,62,"#gamma");
 
+
+    //pomeron
+    TLine *pomeron = new TLine(39.5, 29.8, 37, 40);
+    pomeron->SetLineStyle(2);
+    pomeron->Draw();
+    pomeron = new TLine(40.5, 29.8, 38, 40);
+    pomeron->SetLineStyle(2);
+    pomeron->Draw();
+
     //final state x
-    final = new TArrow(40, 33., 53, 33., arrowSize, "-->");
+    final = new TArrow(37, 44, 50, 44., arrowSize, "-->");
     final->Draw();
-    t.DrawLatex(52,36.,"x");
-    
+
+    t.DrawLatex(49,48.,"x");
+
     //interaction
-    TEllipse *interaction = new TEllipse(40, 32, 3, 5);
+    TEllipse *interaction = new TEllipse(37.5, 44, 3, 5);
     interaction->SetNoEdges();
     interaction->SetFillColor(kGray);
     interaction->SetLineWidth(0);
     interaction->Draw();
+
+    t.DrawLatex(34,34,"#Rho");
 
     //EMD
     gamma = new TCurlyLine(59, 77.3, 62, 22.7);
