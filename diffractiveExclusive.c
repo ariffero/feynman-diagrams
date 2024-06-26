@@ -54,7 +54,8 @@ void diffractiveExclusive(bool directions = true){
     pomeron = new TLine(40.5, 29.8, 38, 40);
     pomeron->SetLineStyle(2);
     pomeron->Draw();
-
+    t.DrawLatex(34,34,"#Rho");
+    
     //final state x
     //final = new TArrow(37, 42., 60, 38., arrowSize, "-->");
     //final->Draw();
@@ -74,7 +75,7 @@ void diffractiveExclusive(bool directions = true){
     interaction->SetLineWidth(0);
     interaction->Draw();
 
-    t.DrawLatex(34,34,"#Rho");
+    
 
     //TLatex gaps;
     //gaps.SetTextAlign(22);

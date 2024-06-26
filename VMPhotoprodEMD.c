@@ -46,18 +46,27 @@ void VMPhotoprodEMD(string EMD = "Xn0n", bool directions = true, bool separate =
     t.DrawLatex(85,6,"A'");    
 
     // photon
-    gamma = new TCurlyLine(25, 60, 50, 20);
+    gamma = new TCurlyLine(25, 60, 43, 32);
     gamma->SetWavy();
     gamma->Draw();
     t.DrawLatex(26,50,"#gamma");
 
+    //pomeron
+    TLine *pomeron = new TLine(49.5, 20, 44, 29);
+    pomeron->SetLineStyle(2);
+    pomeron->Draw();
+    pomeron = new TLine(50.5, 20, 45, 29);
+    pomeron->SetLineStyle(2);
+    pomeron->Draw();
+    t.DrawLatex(51,26,"#Rho");
+
     //final state x
-    final = new TArrow(50, 23., 60, 23., arrowSize, "-->");
+    final = new TArrow(44, 33., 55, 33., arrowSize, "-->");
     final->Draw();
-    t.DrawLatex(58, 27.,"VM");
+    t.DrawLatex(55, 38.,"VM");
 
     //interaction
-    TEllipse *interaction = new TEllipse(50, 22, 3, 5);
+    TEllipse *interaction = new TEllipse(43, 32, 3, 6);
     interaction->SetNoEdges();
     interaction->SetFillColor(kGray);
     interaction->SetLineWidth(0);
