@@ -1,6 +1,6 @@
 // draw the Feynman diagram for photon-nuclear inclusive process in UPCs
 
-void diffractiveExclusive(bool directions = true){
+void diffractiveExclusive(bool coh = true, bool directions = true){
 
     TCanvas *c = new TCanvas("c", "c", 10,10, 400, 600);
     c->Range(0, 0, 80, 100);
@@ -38,7 +38,8 @@ void diffractiveExclusive(bool directions = true){
     lead = new TLine(40, 30, 70, 20); 
     lead->Draw();
     t.DrawLatex(15,17,"A");
-    t.DrawLatex(65,17,"A");
+    if(!coh) t.DrawLatex(65,17,"A'");
+    if(coh) t.DrawLatex(65,17,"A");
 
     // photon
     gamma = new TCurlyLine(30, 70, 37, 47);
@@ -75,7 +76,11 @@ void diffractiveExclusive(bool directions = true){
     interaction->SetLineWidth(0);
     interaction->Draw();
 
-    
+    // if the interaction is incoh draw a neutron of the nucleus-going side
+    TArrow *neutron;
+    neutron = new TArrow(40, 30, 49, 30, arrowSize, "-->");
+    if(!coh) neutron->Draw();
+    if(!coh) t.DrawLatex(51.5,30,"n");
 
     //TLatex gaps;
     //gaps.SetTextAlign(22);
@@ -88,16 +93,16 @@ void diffractiveExclusive(bool directions = true){
     //t.DrawLatex(58,34,"gap");
 
     //mark the rapidity gap
-    TArrow *rap = new TArrow(50,34,60,34,arrowSize,"<-|");
+    TArrow *rap = new TArrow(50,36,60,36,arrowSize,"<-|");
     rap->Draw();
-    t.DrawLatex(66, 34, "gap");
+    t.DrawLatex(66, 36, "gap");
     rap = new TArrow(50, 60, 60, 60,arrowSize,"<-|");
     rap->Draw();
     t.DrawLatex(66, 60, "gap");
 
     //save the image
     gSystem->mkdir("images");
-    c->SaveAs("images/diffractiveExclusive.pdf");
-
+    if(coh) c->SaveAs("images/diffractiveExclusive.pdf");
+    if(!coh) c->SaveAs("images/diffractiveExclusiveIncoh.pdf");
         
 }
