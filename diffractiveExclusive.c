@@ -67,7 +67,7 @@ void diffractiveExclusive(bool coh = true, bool directions = true){
     final = new TArrow(37, 44, 55, 44., arrowSize, "-->");
     final->Draw();
 
-    t.DrawLatex(60,44.,"x");
+    t.DrawLatex(61,44.,"VM");
 
     //interaction
     TEllipse *interaction = new TEllipse(37.5, 44, 3, 5);
@@ -102,7 +102,13 @@ void diffractiveExclusive(bool coh = true, bool directions = true){
 
     //save the image
     gSystem->mkdir("images");
-    if(coh) c->SaveAs("images/diffractiveExclusive.pdf");
-    if(!coh) c->SaveAs("images/diffractiveExclusiveIncoh.pdf");
+    if(coh){
+        c->SaveAs("images/diffractiveExclusive.pdf");
+        c->SaveAs("images/diffractiveExclusive.png");
+    }
+    if(!coh){
+        c->SaveAs("images/diffractiveExclusiveIncoh.pdf");
+        c->SaveAs("images/diffractiveExclusiveIncoh.png");
+    }
         
 }

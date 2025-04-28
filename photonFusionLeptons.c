@@ -74,5 +74,6 @@ void photonFusionLeptons(bool directions = true){
     //save the image
     gSystem->mkdir("images");
     c->SaveAs("images/photonFusionLeptons.pdf");
+    c->SaveAs("images/photonFusionLeptons.png");
 
 }
